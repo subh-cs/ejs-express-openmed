@@ -11,14 +11,16 @@
     <div style="text-align: center">
       <h1>OpenMed</h1>
       <img
-        src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg"
+        src="https://thumbs.dreamstime.com/b/indian-doctor-woman-23462721.jpg"
         alt="audio player"
       />
-    <audio autoplay>
-      <source
-        src="hello-world.mp3?cachebust=<%= Date.now() %>"
-        type="audio/mp3"
-      />
-    </audio>
+      <% if (audioBuffer) { %>
+        <audio autoplay>
+          <source
+            src="data:audio/mp3;base64,<%= audioBuffer.toString('base64') %>"
+            type="audio/mp3"
+          />
+        </audio>
+      <% } %>
   </body>
 </html>

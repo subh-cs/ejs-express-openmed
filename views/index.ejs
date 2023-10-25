@@ -9,8 +9,31 @@
     <div>Hello wop</div>
     <a href="/listen-audio"><button type="button">open-mic</button></a>
     <a href="/save-audio"><button type="button">save</button></a>
-    <a href="/qn-openai?qn=আমার পেট খুব খারাপ ব্যাথা করছে"
+    <!-- <a href="/qn-openai?qn=আমার পেট খুব খারাপ ব্যাথা করছে"
       ><button type="button">speak</button></a
-    >
+    > -->
+    <button type="button" onclick="startRecord()">start</button>
   </body>
+  <script>
+    // start recording audio from websppech api
+    function startRecord() {
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = "bn-IN";
+      recognition.start();
+      recognition.onresult = function (event) {
+        console.log(event);
+        const speechResult = event.results[0][0].transcript;
+        console.log(speechResult);
+        // redirect to "/qn-openai with query string speechResult
+        window.location.href = `/qn-openai?qn=${speechResult}`;
+      };
+
+      recognition.onend = function () {
+        console.log("end");
+      };
+    }
+
+
+    
+  </script>
 </html>
