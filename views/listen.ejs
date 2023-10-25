@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenMed</title>
+  </head>
+  <body>
+    
+    <!-- keep the image at center -->
+    <div style="text-align: center">
+      <h1>OpenMed</h1>
+      <img
+        src="https://img.freepik.com/free-photo/woman-doctor-wearing-lab-coat-with-stethoscope-isolated_1303-29791.jpg"
+        alt="audio player"
+      />
+    <audio autoplay>
+      <source
+        src="hello-world.mp3?cachebust=<%= Date.now() %>"
+        type="audio/mp3"
+      />
+    </audio>
+  </body>
+</html>
