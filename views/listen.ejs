@@ -16,11 +16,9 @@
       />
       <% if (audioBuffer) { %>
         <audio autoplay>
-          <source
-            src="data:audio/mp3;base64,<%= audioBuffer.toString('base64') %>"
-            type="audio/mp3"
-          />
+            <source src="data:audio/mp3;base64,<%= audioBuffer.toString('base64') %>" type="audio/mp3">
+            Your browser does not support the audio element.
         </audio>
-      <% } %>
+    <% } %>
   </body>
 </html>

@@ -24,6 +24,7 @@
         console.log(event);
         const speechResult = event.results[0][0].transcript;
         console.log(speechResult);
+        console.log(1);
         // redirect to "/qn-openai with query string speechResult
         window.location.href = `/qn-openai?qn=${speechResult}`;
       };
